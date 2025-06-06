@@ -298,7 +298,7 @@ class CodeGeneratorRunnable:
         # how to know who to wait for?
         waiting_for = self.waiting_for[self.curr_thread].pop(0)
         # print('%s waited for %s' % (self.curr_thread, waiting_for[1]))
-        self.fd.write('Wait(\"%s\");\n' % self.curr_thread);
+        self.fd.write('Wait(\"%s\");\n' % self.curr_thread)
         return
         
     def generate(self):
@@ -556,7 +556,7 @@ cg_run.generate()
 
 # now either list the code, or run it
 if options.solve:
-    os.system('gcc -o %s %s.c -Wall' % (options.runnable, options.runnable))
+    os.system("clang -o %s %s.c -Wall" % (options.runnable, options.runnable))
     os.system('./%s' % options.runnable)
 else:
     # print('cat %s.c' % options.readable)
