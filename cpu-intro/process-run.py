@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 
 from __future__ import print_function
-import sys
 from optparse import OptionParser
 import random
 
@@ -186,7 +185,7 @@ class scheduler:
         clock_tick = 0
 
         if len(self.proc_info) == 0:
-            return
+            raise ValueError("Missing arguments")
 
         # track outstanding IOs, per process
         self.io_finish_times = {}
