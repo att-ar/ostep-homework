@@ -5,6 +5,7 @@ import random
 import re
 import string
 import os
+from os import close
 from optparse import OptionParser
 
 #
@@ -556,7 +557,7 @@ cg_run.generate()
 
 # now either list the code, or run it
 if options.solve:
-    os.system("clang -o %s %s.c -Wall" % (options.runnable, options.runnable))
+    os.system("clang -o %s.o %s.c -Wall" % (options.runnable, options.runnable))
     os.system('./%s' % options.runnable)
 else:
     # print('cat %s.c' % options.readable)
